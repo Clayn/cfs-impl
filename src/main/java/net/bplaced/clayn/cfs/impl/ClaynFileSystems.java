@@ -12,7 +12,7 @@ import net.bplaced.clayn.cfs.impl.sql.SQLCFileSystem;
 /**
  * This class collects all official implementions for the filesystem. All
  * classes are dependencies. That can be used if you want to have all
- * implementations while using just one dependency.
+ * implementations while using just one dependency that includes all others.
  *
  * @author Clayn
  * @since 0.1
@@ -42,7 +42,7 @@ public class ClaynFileSystems
     }
 
     /**
-     * Creates a new CFiileSystem that operates on the local file system using
+     * Creates a new CFileSystem that operates on the local file system using
      * the given directory as root directory.
      *
      * @param base the root for the CFileSystem

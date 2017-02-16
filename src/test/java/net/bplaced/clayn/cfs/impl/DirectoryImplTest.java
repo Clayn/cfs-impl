@@ -28,6 +28,11 @@ public class DirectoryImplTest extends DirectoryTest
     public DirectoryImplTest()
     {
         runningTests.addAll(Arrays.asList(TEST_ALL));
+        String os = System.getProperty("os.name");
+        if (os.toLowerCase().contains("windows"))
+        {
+            runningTests.remove(TEST_DELETE);
+        }
     }
 
     @Parameterized.Parameter

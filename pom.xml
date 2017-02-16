@@ -86,11 +86,13 @@
             <groupId>net.bplaced.clayn</groupId>
             <artifactId>cfs-local</artifactId>
             <version>0.3.0-SNAPSHOT</version>
+
         </dependency>
         <dependency>
             <groupId>net.bplaced.clayn</groupId>
             <artifactId>cfs-sql</artifactId>
             <version>0.3.0-SNAPSHOT</version>
+
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -108,6 +110,7 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>cfs-test</artifactId>
             <version>0.3.0-SNAPSHOT</version>
+
             <scope>test</scope>
             <classifier>tests</classifier>
         </dependency>

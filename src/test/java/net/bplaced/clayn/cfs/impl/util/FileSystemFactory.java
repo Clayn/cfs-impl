@@ -17,7 +17,9 @@ import org.junit.rules.TemporaryFolder;
  */
 public class FileSystemFactory
 {
-    static String DB_URL="";
+
+    static String DB_URL = "";
+
     static
     {
         try
@@ -29,21 +31,21 @@ public class FileSystemFactory
                     null, ex);
         }
     }
-    
+
     static File getTemporaryFile() throws IOException
     {
         TemporaryFolder folder = new TemporaryFolder();
         folder.create();
         return folder.newFile("testdb");
     }
-    
+
     public static File getTemporaryDir() throws IOException
     {
         TemporaryFolder folder = new TemporaryFolder();
         folder.create();
         return folder.newFolder();
     }
-    
+
 //    public static Connection getConnection()
 //    {
 //        

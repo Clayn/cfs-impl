@@ -27,7 +27,7 @@ public class CFileSystemImplTest extends CFileSystemTest
 
     public CFileSystemImplTest()
     {
-        runningTests.addAll(Arrays.asList(TEST_CREATE,TEST_ROOT,TEST_SETTINGS));
+        runningTests.addAll(Arrays.asList(TEST_CREATE, TEST_ROOT, TEST_SETTINGS));
     }
 
     @Parameterized.Parameter

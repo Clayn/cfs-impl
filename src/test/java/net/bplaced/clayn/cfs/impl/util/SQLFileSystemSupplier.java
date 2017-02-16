@@ -23,14 +23,15 @@ import static net.bplaced.clayn.cfs.impl.util.FileSystemFactory.getTemporaryFile
  */
 public class SQLFileSystemSupplier implements Supplier<CFileSystem>
 {
+
     private String url;
-    
+
     private void createDB() throws IOException
     {
         File db = getTemporaryFile();
-        url="jdbc:h2:" + db.toURI().toURL();
+        url = "jdbc:h2:" + db.toURI().toURL();
     }
-    
+
     private Connection getCDB()
     {
         try
@@ -38,11 +39,13 @@ public class SQLFileSystemSupplier implements Supplier<CFileSystem>
             return DriverManager.getConnection(url, "sa", "");
         } catch (SQLException ex)
         {
-            Logger.getLogger(SQLFileSystemSupplier.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(SQLFileSystemSupplier.class.getName()).log(
+                    Level.SEVERE,
                     null, ex);
             throw new RuntimeException(ex);
         }
     }
+
     @Override
     public CFileSystem get()
     {
@@ -50,12 +53,13 @@ public class SQLFileSystemSupplier implements Supplier<CFileSystem>
         {
             createDB();
             return ClaynFileSystems.getDBFileSystem(this::getCDB);
-        } catch (IOException|SQLException ex)
+        } catch (IOException | SQLException ex)
         {
-            Logger.getLogger(SQLFileSystemSupplier.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(SQLFileSystemSupplier.class.getName()).log(
+                    Level.SEVERE,
                     null, ex);
             throw new RuntimeException(ex);
         }
     }
-    
+
 }

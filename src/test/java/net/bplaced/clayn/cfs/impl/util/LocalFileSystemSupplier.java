@@ -25,25 +25,26 @@ public class LocalFileSystemSupplier implements Supplier<CFileSystem>
     public static final TemporaryFolder FOLDER = new TemporaryFolder();
     public static final BooleanProperty CREATED = new SimpleBooleanProperty(
             false);
-    
+
     @Override
     public CFileSystem get()
     {
-        
+
         try
         {
-            if(!CREATED.get())
-        {
-            FOLDER.create();
-            CREATED.set(true);
-        }
+            if (!CREATED.get())
+            {
+                FOLDER.create();
+                CREATED.set(true);
+            }
             return ClaynFileSystems.getLocalFileSystem(FOLDER.newFolder());
         } catch (IOException ex)
         {
-            Logger.getLogger(LocalFileSystemSupplier.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(LocalFileSystemSupplier.class.getName()).log(
+                    Level.SEVERE,
                     null, ex);
             throw new RuntimeException(ex);
         }
     }
-    
+
 }
